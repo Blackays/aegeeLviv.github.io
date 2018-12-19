@@ -1,0 +1,303 @@
+@import "variables";
+
+
+
+.top-bar {
+	width: 100%;
+	height: $topBarHeight;
+	overflow: hidden;
+	z-index: 15;
+	
+	position: fixed;
+	top: 0;
+	
+	box-shadow: none;
+	
+	transition: all $time2 ease-in;
+	
+	@media (max-width: $breakpointMobile) {
+		height: 0;
+	}
+	
+	@media (max-width: $breakpointSmall) {
+		font-size: 0.9em;
+	}
+	
+	&--in {
+		box-shadow: 0 0 15px color(black a(35%));
+		
+		& .top-bar__tab {
+			color: $color2;
+			text-shadow: none;
+		}
+		
+		& .top-bar__bg {
+			background: $whiteE;
+		}
+		
+		& .top-bar__logo, & .top-bar__line {
+			opacity: 1;
+		}
+	}
+	
+	&--in-no-delay {
+		& .top-bar__bg {
+			transition: unset;
+		}
+	}
+	
+	&--open {
+		height: 490px;
+		transition-timing-function: ease-out;
+	}
+	
+	&__menu {
+		max-width: $breakpointBig;
+		margin: 0 auto;
+		padding: 0;
+		
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		@media (max-width: $breakpointMobile) {
+			flex-flow: column nowrap;
+		}
+	}
+	
+	&__tab-container {
+		list-style: none;
+		
+		transition: all 0.5s $ease-out;
+		
+		opacity: 0;
+		transform: translate3d(0, -50px, 0);
+		
+		@media (max-width: $breakpointMobile) {
+			width: 100%;
+		}
+		
+		&--in {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+		
+		&--in1 {
+			transition-delay: 0s;
+		}
+		
+		&--in2 {
+			transition-delay: 0.2s;
+		}
+		
+		&--in3 {
+			transition-delay: 0.4s;
+		}
+		
+		&--in4 {
+			transition-delay: 0.6s;
+		}
+		
+		&--in5 {
+			transition-delay: 0.8s;
+		}
+		
+		&--in6 {
+			transition-delay: 1s;
+		}
+		
+		&--in7 {
+			transition-delay: 1.2s;
+		}
+	}
+	
+	&__tab {
+		height: $topBarHeight;
+		padding: 0 1.4vw;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		color: white;
+		font-family: Roboto Slab, serif;
+		font-weight: 700;
+		text-align: center;
+		text-transform: uppercase;
+		text-shadow: 0 0 1vw color(black a(50%));
+		
+		transition: all 0.5s;
+		
+		@media (min-width: $breakpointBig) {
+			padding: 0 30px;
+		}
+		
+		@media (max-width: $breakpointMobile) {
+			width: 100%;
+			height: 60px;
+			color: $color2;
+		}
+		
+		&:hover {
+			text-shadow: 0 0 1.5em $color6;
+		}
+		
+		&--m {
+			@media (max-width: $breakpointMobile) {
+				height: 70px;
+			}
+		}
+		
+		&--in {
+			text-shadow: none;
+			animation: 1s 6s tada;
+			
+			/* stylelint-disable block-opening-brace-newline-after */
+			
+			@at-root { @keyframes tada {
+					from {
+						transform: scale3d(1, 1, 1);
+					}
+					10%, 20% {
+						transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+					}
+					30%, 50%, 70%, 90% {
+						transform: scale3d(1.5, 1.5, 1.5) rotate3d(0, 0, 1, 3deg);
+					}
+					40%, 60%, 80% {
+						transform: scale3d(1.5, 1.5, 1.5) rotate3d(0, 0, 1, -3deg);
+					}
+					to {
+						transform: scale3d(1, 1, 1);
+					}
+				}
+			}
+			/* stylelint-enable */
+		}
+	}
+	
+	&__icon {
+		width: 35px;
+		height: 35px;
+		margin: 0 5px;
+		
+		border-radius: 100%;
+		
+		transition: all 0.5s;
+		
+		&:hover {
+			box-shadow: 0 0 1vw $color6;
+		}
+	}
+	
+	&__logo {
+		width: 110px;
+		height: 35px;
+		margin-top: 2px;
+		
+		transition: all $time2;
+		
+		opacity: 0;
+		
+		@media (max-width: $breakpointMobile) {
+			height: 40px;
+			opacity: 1;
+		}
+	}
+	
+	&__bg {
+		width: 100%;
+		height: 100%;
+		
+		position: absolute;
+		top: 0;
+		
+		opacity: 1;
+		
+		transition: all $time2;
+		
+		@media (max-width: $breakpointMobile) {
+			background-color: white;
+		}
+	}
+	
+	&__three-bars {
+		width: 40px;
+		height: @width;
+		margin: 18px;
+		
+		z-index: 15;
+		position: fixed;
+		top: 0;
+		right: 0;
+		
+		user-select: none;
+		
+		@media (min-width: $breakpointMobile) {
+			display: none;
+		}
+		
+		&:active {
+			filter: drop-shadow(0 0 1vw $color4);
+		}
+	}
+	
+	&__three-bars-close-surface {
+		width: 100%;
+		height: @width;
+		
+		z-index: 15;
+		display: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+	
+		&--in {
+			display: block;
+		}
+	}
+	
+	&__line {
+		width: 50px;
+		height: 4px;
+
+		position: absolute;
+		top: calc($topBarHeight - @height);
+		
+		background: $color2;
+		opacity: 0;
+		
+		transition: all $time2;
+		
+		@media (max-width: $breakpointMobile) {
+			display: none;
+		}
+		
+		&::before {
+			content: "";
+			
+			width: 100%;
+			height: $topBarHeight;
+			margin: 0 auto;
+			
+			display: block;
+			
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			
+			background:
+				radial-gradient(
+					ellipse farthest-corner at 50% 100%,
+					color($color5 a(15%)) 0%,
+					transparent 60%
+				) center 0 / 100% 100% no-repeat;
+		}
+	}
+}
