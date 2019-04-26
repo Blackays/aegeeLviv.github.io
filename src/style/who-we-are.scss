@@ -1,25 +1,7 @@
 .who-we-are {
 	z-index: 9;
 	
-	background:
-		url('img/header.png') 0 $marginTop / 100% 600px no-repeat,
-		radial-gradient(
-			ellipse farthest-corner at 50% 0,
-			$color1 10%,
-			$color2 60%
-		) center 0 / 400% 100% no-repeat;
-	
 	color: white;
-	
-	@media (max-width: $breakpointMobile) {
-		background:
-			url('img/header.png') top / 100% 400px no-repeat,
-			radial-gradient(
-				ellipse farthest-corner at 50% 0,
-				$color1 10%,
-				$color2 60%
-			) center 0 / 400% 100% no-repeat;
-	}
 	
 	&__europe-img {
 		width: 50%;
@@ -48,6 +30,55 @@
 			width: 100%;
 			height: calc(100vw * 0.6);
 			margin: 12vw auto 1vw;
+		}
+	}
+	
+	&__mean {
+		width: 33%;
+		height: 30vw;
+		padding: 0 1% 0 2%;
+		
+		display: inline-block;
+		overflow: hidden;
+		
+		text-align: left;
+		
+		transition: $time1;
+
+		@media (max-width: $breakpointMobile) {
+			width: auto;
+			height: auto;
+			padding: 0 0 10%;
+		}
+
+		@media (min-width: $breakpointBig) {
+			height: 600px;
+		}
+	}
+	
+	&__icon {
+		width: 30%;
+		height: @width;
+		margin: 5% auto;
+		display: block;
+	}
+
+	&__title {
+		margin-bottom: 3%;
+		position: relative;
+
+		color: $color3;
+		font-size: 220%;
+		font-family: bebas-neue, sans-serif;
+		line-height: 1;
+		font-weight: 500;
+
+		text-shadow: 0 0 1.5vw $color3;
+
+		@media (max-width: $breakpointMobile) {
+			margin-bottom: 1%;
+			padding: 4vw 0 2vw;
+			font-size: 210%;
 		}
 	}
 }
