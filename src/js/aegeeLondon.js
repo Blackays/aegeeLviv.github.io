@@ -83,7 +83,7 @@ function init() { // eslint-disable-line no-unused-vars
 		easing: "outCubic",
 		duration: 500,
 		handleLink: function(link) {
-			var extraSpace = -100;
+			var extraSpace = -150;
 			var linkText = link.href.split("#").pop();
 			var linkPositionActivities = d.calcRelativePosition("#activities", "#" + linkText);
 			var linkPositionBoard = d.calcRelativePosition("#the-board", "#" + linkText);
