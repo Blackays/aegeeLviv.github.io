@@ -1,10 +1,10 @@
 function init() { // eslint-disable-line no-unused-vars
 	function isMobile() {
-		return window.innerWidth < 1010;
+		return window.innerWidth < 810;
 	}
 	
 	function getGap() {
-		return isMobile() ? 80 : 300;
+		return isMobile() ? 150 : 300;
 	}
 	
 	function setBodyHeight() {
