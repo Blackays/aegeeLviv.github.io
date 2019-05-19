@@ -4,7 +4,7 @@ function init() { // eslint-disable-line no-unused-vars
 	}
 	
 	function getGap() {
-		return isMobile() ? 150 : 300;
+		return isMobile() ? 80 : 300;
 	}
 	
 	function setBodyHeight() {
