@@ -1,6 +1,6 @@
 function init() { // eslint-disable-line no-unused-vars
 	function isMobile() {
-		return window.innerWidth < 710;
+		return window.innerWidth < 1010;
 	}
 	
 	function getGap() {
