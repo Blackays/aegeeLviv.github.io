@@ -169,7 +169,7 @@ function init() { // eslint-disable-line no-unused-vars
 			moveLine();
 			setBodyHeight();
 			skrollrInstance.refresh();
-		}, 300);
+		}, 400);
 		d.gc("top-bar").classList.remove("top-bar--open");
 		d.gc("top-bar__three-bars-close-surface").classList.remove("top-bar__three-bars-close-surface--in");
 	});
