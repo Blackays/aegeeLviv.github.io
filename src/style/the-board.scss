@@ -54,7 +54,7 @@
 		transition: $time2 ease-out all;
 		
 		@media (max-width: $breakpointMobile) {
-			background-position: center 20%;
+			background-position: center 10%;
 			transform: scale3d(1.1, 1.1, 1);
 		}
 		
