@@ -12,8 +12,9 @@
 		
 		@media (max-width: $breakpointMobile) {
 			width: 100%;
-			height: 105vh;
-			min-height: 500px;
+			height: 65vh;
+			min-height: 800px;
+			filter: saturate(1);
 		}
 		
 		&:hover .the-board__portrait {
