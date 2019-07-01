@@ -11,6 +11,10 @@ function init() { // eslint-disable-line no-unused-vars
 		var height = d.calcClientHeightsSum("section.skrollr-deck") + getGap()*6;
 		document.body.style.height = height + "px";
 	}
+		function setBodyHeight() {
+		var height = d.calcClientHeightsSum("section.skrollr1-deck") + getGap()*6;
+		document.body.style.height = height + "px";
+	}
 	
 	function showTopBarEntries() {
 		var menuEntries = d.qsa(".top-bar__tab-container:nth-child(n+3)");
